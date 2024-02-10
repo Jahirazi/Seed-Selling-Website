@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vidhai</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initialscale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    #navbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      padding: .5rem .5rem;
+      box-shadow: 5px 5px 20px grey;
+      background-color: lightgreen;
+    }
+
+    .navbar .navbar-brand {
+      font-size: 28px;
+      font-weight: 600;
+      color: black;
+    }
+
+    #navbarNav a {
+      color: green;
+    }
+
+    #navbarNav a:hover {
+      border-bottom: 2px solid black;
+    }
+
+    .btn {
+      font-weight: bold;
+    }
+
+    #navbar button a {
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+    }
+
+    #navbar a i {
+      color: black;
+      padding-right: 20px;
+    }
+
+    #navbar a i:hover {
+      color: white;
+    }
+
+    /*home*/
+    .home {
+      width: 100%;
+      height: 100vh;
+      background-image: url(https://thumbs.dreamstime.com/b/hands-farmer-planting-seeds-soil-145559640.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .home .homepage {
+      text-align: center;
+      padding-top: 200px;
+    }
+
+    .home .homepage h2 {
+      color: white;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .home .homepage span {
+      color: rgb(18, 237, 40);
+      padding-bottom: 60%;
+      font-size: 35px;
+    }
+
+    .changecontent::after {
+      content: ' ';
+      color: lightgreen;
+      animation: changetext 10s infinite linear;
+      font-weight: 700;
+    }
+
+    @keyframes changetext {
+      0% {
+        content: "Orders";
+      }
+
+      10% {
+        content: "Are";
+      }
+
+      20% {
+        content: "Getting";
+      }
+
+      30% {
+        content: "Placed";
+      }
+
+      40% {
+        content: "Hurry Up!!!";
+      }
+
+    }
+
+    .home .homepage a {
+      padding-top: 40%;
+      padding: 10px;
+      background: white;
+      color: black;
+      letter-spacing: 2px;
+      font-weight: 550;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    .home .homepage a:hover {
+      background-color: lightgreen;
+    }
+
+    .home .homepage marquee {
+      color: black;
+      background-color: white;
+      border-radius: 5px;
+      height: 10%;
+
+    }
+
+    /*popup*/
+
+    .popupbox .login .loginbutton {
+      padding: 10px;
+      border-radius: 5px;
+      width: 30%;
+    }
+
+    .popupbox .login .cancelbutton {
+      display: inline;
+      margin-left: 70px;
+      margin-bottom: 30px;
+      background-color: white;
+      border-radius: 100%;
+      font-size: 10px;
+    }
+
+    .popupbox {
+      position: absolute;
+      width: 30%;
+      z-index: 3;
+      background-color: lightgreen;
+      color: black;
+      border-radius: 10px;
+      padding: 10px;
+      left: 35%;
+      top: 65%;
+      text-align: center;
+      display: none;
+    }
+
+    /*popup*/
+
+
+
+    /*home*/
+
+    /*Products*/
+    .products {
+      text-align: center;
+      margin-top: 30px;
+      background-color: lightgreen;
+      border-radius: 20px;
+    }
+
+    .products1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      margin: 15px;
+      max-width: 300px;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .cardbody {
+      padding: 10px;
+    }
+
+    .buy {
+      background-color: lightgreen;
+      padding: 10px;
+      border-style: none;
+      border-radius: 12px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .card img:hover {
+      cursor: pointer;
+    }
+
+    /*Products*/
+
+    /*Tutorial*/
+
+    .Tutorial {
+      text-align: center;
+      margin-top: 30px;
+      background-color: lightgreen;
+      border-radius: 20px;
+      padding-top: 60px;
+      padding-bottom: 50px;
+    }
+
+    .content {
+      display: flex;
+      padding-top: 20px;
+    }
+
+    .image {
+      display: flex;
+    }
+
+    .image img {
+      border-radius: 15px;
+    }
+
+    .points1 {
+      text-align: center;
+      background-color: lightgreen;
+      border-radius: 20px;
+      margin-left: 10px;
+      padding-top: 20px;
+    }
+
+    .points2 {
+      text-align: center;
+      background-color: lightgreen;
+      border-radius: 20px;
+      margin-right: 10px;
+      padding-top: 20px;
+    }
+
+    /*Tutorial*/
+
+    /*contact*/
+    #contact {
+      margin-top: 40px;
+      background-color: lightgreen;
+      text-align: center;
+    }
+
+    #contact h1 {
+      font-weight: bold;
+      padding-top: 40px;
+    }
+
+    .contact {
+      margin-top: 40px;
+      background-color: lightgreen;
+      border-radius: 15px;
+    }
+
+    .contact .right {
+      margin-top: 50px;
+    }
+
+    .contact .right {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact .right i {
+      font-size: 35px;
+      display: inline;
+      padding: 20px;
+    }
+
+    .contact .right .hide {
+      display: none;
+    }
+
+    .contact .right i:hover {
+      color: white;
+    }
+
+    .contact .right i:hover+p {
+      display: block;
+      background-color: white;
+      border-radius: 20px;
+      color: black;
+      width: 15%;
+      padding: 10px;
+      margin-left: 50%;
+    }
+
+    .contact .right i:hover+p a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .login {
+      align-items: right;
+      justify-content: right;
+
+    }
+
+    .login input {
+      border-style: none;
+      border-radius: 5px;
+      padding: 10px;
+      width: 60%;
+    }
+
+    .login button {
+      padding: 7px;
+      border-radius: 5px;
+      width: 10%;
+      border-style: none;
+    }
+
+    button #login {
+      text-decoration: none;
+      color: black;
+    }
+
+
+    /*contact*/
+    @media (max-width: 600px) {
+      .card {
+        max-width: 100%;
+      }
+
+      .content img {
+        display: none;
+      }
+
+      .login button {
+        padding: 10px;
+        border-radius: 5px;
+        width: 20%;
+      }
+
+      .contact .right i:hover+p {
+        display: block;
+        background-color: white;
+        border-radius: 20px;
+        color: black;
+        width: 35%;
+        padding: 10px;
+        margin-left: 50%;
+      }
+
+      /*login*/
+
+      .popupbox .login button {
+        padding: 10px;
+        border-radius: 5px;
+        width: 30%;
+      }
+
+      .popupbox {
+        position: absolute;
+        width: 70%;
+        z-index: 3;
+        background-color: lightgreen;
+        color: black;
+        border-radius: 10px;
+        padding: 10px;
+        left: 15%;
+        top: 77%;
+        text-align: center;
+        display: none;
+      }
+
+      .login input {
+        width: 75%;
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Vidhai</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Tutorial">Tutorial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">About</a>
+          </li>
+        </ul>
+        <a href="#"><i class="fa-solid fa-cart-shopping fa-2xl"></i></a>
+        <button class="btn" onclick="show()"><a href="#home">Login</a> </button>
+      </div>
+    </div>
+  </nav>
+  <!--navbar-->
+
+  <!--home-->
+  <section id="home">
+
+    <div class="home">
+      <div class="popupbox">
+        <div class="login" section id="login">
+          <h3>Login to Place Order<button onclick="closepopup()" class="cancelbutton">X</button></h3>
+          <form onsubmit="validateform(event)">
+            <input type="text" placeholder="Username" id="Username" required><br><br>
+            <input type="password" placeholder="password" id="Password" required><br><br>
+            <button onclick="closepopup()" class="loginbutton">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="homepage">
+        <h2>Welcome to Vidhai</h2>
+        <span class="changecontent"></span><br><br><br>
+        <a href="#Products">Order Vidhai</a><br><br>
+        <marquee width="70%" behavior="scroll">
+          “If you cut a tree, you kill a life. If you save a tree, you save a life.
+          If you plant a tree, you plant a life.”
+        </marquee>
+      </div>
+    </div>
+
+
+    <script>
+
+      var popupbox = document.querySelector(".popupbox")
+      function show() {
+        popupbox.style.display = "block"
+      }
+      function closepopup() {
+        popupbox.style.display = "none"
+
+      }
+    </script>
+
+
+  </section>
+  <!--home-->
+  <!--Products-->
+  <section id="Products">
+    <div class="products">
+      <h1>Vegetable Seeds</h1>
+    </div>
+    <div class="products1">
+      <div class="card" style="width: 15rem;">
+        <img src="Baby-corn.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Babycorn Seeds</h5>
+          <p class="card-text">Rs:39/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="BEANS-SEEDS.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Beans seeds</h5>
+          <p class="card-text">Rs:99/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Beetroot.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Beetroot Seeds</h5>
+          <p class="card-text">Rs:98/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Bendi.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Ladies Finger Seeds</h6>
+          <p class="card-text">Rs:98/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Bitter.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bitter Guard Seeds</h5>
+          <p class="card-text">Rs:99/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="BRIJAL.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Brinjal Seeds</h5>
+          <p class="card-text">Rs:103/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card" style="width: 15rem;">
+        <img src="Cabbage.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Cabbage Seeds</h5>
+          <p class="card-text">Rs:99/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Capsicum.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Capsicum Seeds</h5>
+          <p class="card-text">Rs:99/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Carrot.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Carrot Seeds</h5>
+          <p class="card-text">Rs:99/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Cherry-Tomato.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Tomato seeds</h5>
+          <p class="card-text">Rs:90/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Chilles.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chilli Seeds</h5>
+          <p class="card-text">Rs:83/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Onion (1).webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Onion Seeds</h5>
+          <p class="card-text">Rs:86/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="cucumber" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Cucumber Seeds</h5>
+          <p class="card-text">Rs:82/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="pEAS (1).webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Peas Seeds</h5>
+          <p class="card-text">Rs:79/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="pUMPKIN.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Pumpkin Seeds</h5>
+          <p class="card-text">Rs:99/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="products">
+      <h1>Greens & Fruits Seeds</h1>
+    </div>
+    <div class="products1">
+      <div class="card" style="width: 15rem;">
+        <img src="Basil.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Basil Seeds</h5>
+          <p class="card-text">Rs:69/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Palak.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Palak seeds</h5>
+          <p class="card-text">Rs:69/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Mint-Seeds.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Mint Seeds</h5>
+          <p class="card-text">Rs:108/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Methi" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Fenugreek Seeds</h6>
+          <p class="card-text">Rs:58/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Papaya.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Papaya Seeds</h5>
+          <p class="card-text">Rs:79/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Water-Melon.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Watermelon Seeds</h5>
+          <p class="card-text">Rs:103/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Musk-Melon" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Muskmelon Seeds</h5>
+          <p class="card-text">Rs:99/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="products">
+      <h1>Accessories</h1>
+    </div>
+    <div class="products1">
+      <div class="card" style="width: 15rem;">
+        <img src="jug1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Watering Jug</h5>
+          <p class="card-text">Rs:149/-</p><br>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="pot.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Pots <br>(pack of 4)</h5>
+          <p class="card-text">Rs:179/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Tools2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Planting Equip</h5>
+          <p class="card-text">Rs:350/-</p><br>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="container.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Plant Container <br>(Large)</h6>
+          <p class="card-text">Rs:458/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Cow.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Cow Dung</h5>
+          <p class="card-text">Rs:249/-</p><br>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="Garden-Hand-Gloves-.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Hand Gloves</h5>
+          <p class="card-text">Rs:139/-</p><br>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card" style="width: 15rem;">
+        <img src="soil2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Planting soil <br>(5 Kg)</h5>
+          <p class="card-text">Rs:499/-</p>
+          <button onclick="change(event)" ondblclick="normal(event)" class="buy">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <script>
+    var button = document.querySelectorAll(".buy")
+    function change(event) {
+      event.target.style.backgroundColor = "red"
+      event.target.textContent = "Added to Cart"
+    }
+    function normal(event) {
+      event.target.style.backgroundColor = "lightgreen"
+      event.target.textContent = "Add to Cart"
+    }
+
+  </script>
+
+  <!--Products-->
+
+  <!--Tutorial-->
+  <section id="Tutorial">
+    <div class="Tutorial">
+      <h1>Lets Know How to Plant?</h1>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+          aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+          aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+          aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+          aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"
+          aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8"
+          aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9"
+          aria-label="Slide 10"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10"
+          aria-label="Slide 11"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11"
+          aria-label="Slide 1"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="content">
+            <div class="image">
+              <img src="step1.jpg">
+            </div>
+            <div class="points1">
+              <h1> Step 1<br><br>Pick a sunny location with well-drained soil.</h1><br>
+
+              <p> an area that gets around 8 hours of direct sunlight. Most vegetables need a lot of sunlight to put on
+                healthy growth, especially sun-loving plants like tomatoes, squash, and cucumbers. You'll probably want
+                to place your garden on the south-facing side of your yard, so it gets the most light. Choose a location
+                that doesn't have puddles after heavy rain.[1]
+
+                If the soil in your garden doesn't drain well, water will puddle at the roots and can cause root rot.
+                To make it easier to garden, pick a location that's level and doesn't have trees or shrubs that you'd
+                have to work around.
+                Some vegetables like radishes, turnips, and beets can do fine with closer to 6 hours of sunlight, but
+                the more sunlight the better!</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="points2">
+              <h1> Step 2 <br><br> Map out a space for your garden.</h1><br>
+
+              <p> Start with a small garden if you're a beginner. Think of planting a 10 ft × 10 ft (3.0 m × 3.0 m)
+                patch. You can choose up to 5 vegetables and grow up to 5 of each plant in a space this size. Plus,
+                working in a small garden will help you get the hang of designing, planting, watering, and maintaining
+                the space.[2]
+                If you don't have space for an in-ground garden, don't give up! You could plant herbs in containers or
+                set up raised beds for vegetables if you've got patio space.
+                If you have some gardening experience and want a larger garden, aim for a garden that's 300 to 500
+                square feet (28 to 46 m2).</p>
+            </div>
+            <div class="image">
+              <img src="step2.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="image">
+              <img src="step3.jpg" alt="">
+            </div>
+            <div class="points1">
+              <h1> Step 3<br><br>Go with vegetables that thrive in your climate.</h1><br>
+
+              <p>Choose veggies or herbs that you enjoy eating, too. When you get seeds or plant starts, read the labels
+                and choose varieties that work in your particular growing region. This way, you know the plants can
+                thrive in your area's temperatures. If you're new to gardening, pick plants that are easy for beginners
+                to grow like lettuce, carrots, cucumbers, and tomatoes. Some plants like spinach and radishes also grow
+                quickly, so they're great options for containers.[3]
+                If you're still unsure about what to grow, think about the produce that you buy every week. If you go
+                through a lot of lettuce or zucchini, give them a try!
+                Practice companion planting to keep pests away—grow fragrant marigolds throughout your garden,
+                especially near cabbages or melons to keep beetles away.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="points2">
+              <h1>Step 4<br><br>Plan your garden layout.</h1><br>
+
+              <p>Sketch out rows and decide which vegetables to plant in each. This helps you keep track of what you're
+                growing and you can control how much space to leave between the rows—read the plant labels for the
+                recommended amount. For instance, you might plant cool-season crops in rows and designate another part
+                of your garden for warm-season crops.[4]
+                Use recommended spacing as a guide for your garden layout. For example, plants like okra need 3 feet
+                (0.91 m) of space between their rows. You could alternate rows of onions between the okra since onions
+                only need a minimum of 1 foot (0.30 m) of space between them.</p>
+            </div>
+            <div class="image">
+              <img src="step4.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="image">
+              <img src="step5.jpg" alt="">
+            </div>
+            <div class="points1">
+              <h1>Step 5<br><br>Gather your basic garden supplies.</h1><br>
+
+              <p> addition to seeds or starts, collect gardening tools. If you're planting a small garden, you can get
+                away with simple hand tools like a garden trowel for digging, a rake for leveling the soil, shovel, and
+                a watering can. Here are a few other things to pick up from your local nursery, garden center, or
+                online:[5]
+                Gardening gloves to protect your hands from calluses or splinters.
+                A sprinkler for hands-off watering or a hose to water larger gardens.
+                A ruler to measure planting depth and space.
+                A string and stakes to support tall or trailing plants like beans or cucumbers.
+                Fencing supplies to keep out garden pests.
+                A garden notebook to track what you planted and how it did. </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="points2">
+              <h1>Step 6<br><br>Level the soil and add fertilizer or compost.</h1><br>
+
+              <p>Remove rocks, roots, or sticks, and add nutrients to the soil. Walk through your gardening space and
+                pull up anything in the soil that could make it hard for plant roots to grow. Then, mix all-purpose
+                fertilizer (like 13-13-13) or compost into the top 4 inches (10 cm) of the soil. Drag the rake across
+                it, so the soil is level.[6]
+                Plan on using 1 pound (450 g) of fertilizer for every 100 square feet (9.3 m2) of soil.
+                Most vegetables will be fine if you fertilize at the start of the growing season. </p>
+            </div>
+            <div class="image">
+              <img src="step6.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="image">
+              <img src="step7.jpg" alt="">
+            </div>
+            <div class="points1">
+              <h1>Step 7 <br><br> Plant warm-season crops after the last frost.</h1><br>
+
+              <p>Grow crops that need lots of sunlight and heat if you want a summer garden. Most beginners start
+                gardens in the spring or early summer because so many crops thrive with plenty of sunlight and warmth.
+                These are some of the best warm season plants for beginners to try:[7]
+                Beans, cantaloupes, corn, cucumbers, eggplant, okra, peppers, pumpkins, southern peas, squash, sweet
+                potatoes, tomatoes, and watermelons.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="points2">
+              <h1>Step 8 <br><br> Plant cool-season crops in late summer.</h1><br>
+
+              <p>Keep your garden going by planting crops that you can harvest in the fall. You don't have to wait until
+                the weather warms up—there are plenty of crops that grow well with cooler temperatures and less
+                sunlight. If you prefer to start cool-season crops, wait until late summer and plant until the first
+                fall frost.[8]
+                Beets, broccoli, Brussels sprouts, cabbage, carrots, cauliflower, collards, kale, kohlrabi, lettuce,
+                mustard, onions, peas, potatoes, radishes, rutabagas, spinach, Swiss chard, and turnips.</p>
+            </div>
+            <div class="image">
+              <img src="step8.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="image">
+              <img src="step9.jpg" alt="">
+            </div>
+            <div class="points1">
+              <h1>Step 9<br><br>Sow your seeds or plant your starts.</h1><br>
+
+              <p>Dig holes for your plant starts or bury seeds 1⁄4 to 1⁄2 in (0.64 to 1.27 cm) deep. Read the label for
+                each plant start to find the recommended depth. Then, dig a hole and put the start's roots down into it.
+                Fill the hole with soil and gently pack it down. For seeds, scatter them over the surface of your soil
+                and cover them with the recommended amount of soil.[9]
+                Keep in mind that seeds aren't planted very deep because they need to get sunlight as soon as they
+                germinate.
+                If you prefer to have straight rows of seeds, use your ruler to mark straight rows. Then, drag your
+                finger lightly through the soil to make a very shallow indentation. Place your seeds in the rows and
+                cover them with the soil.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="points2">
+              <h1> Step 10<br><br>Keep the soil in your garden moist.</h1><br>
+
+              <p> Water your garden whenever the top 2 inches (5.1 cm) of soil feels dry. If the seeds or plant starts
+                dry out, they won't put on growth. Check the garden in the morning, and use a hose or a watering can to
+                soak the soil. You may need to water more often if you live in a dry or hot climate.[10]
+                It's best to water during the day, so water can evaporate from the leaves. </p>
+            </div>
+            <div class="image">
+              <img src="step10.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="content">
+            <div class="points1">
+              <h1>Step 11<br><br>Pull weeds at least a few times a week.</h1><br>
+
+              <p> Use a small trowel to dig up weeds that compete with your plants. To reduce the time you spend pulling
+                weeds, spread mulch or leafy organic material across your garden bed. The mulch smothers weeds, so they
+                don't steal important nutrients from your vegetables.[11]
+                If you have trouble with wildlife in your yard, put up a fence around your garden to keep pests out.
+              </p>
+            </div>
+            <div class="image">
+              <img src="step11.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </section>
+
+  <!--Tutorial-->
+
+  <!--Contact-->
+  <section id="contact">
+    <h1>Vidhai</h1>
+    <p>“From little seeds grow mighty trees.”</p>
+    <div class="contact">
+      <div class="right">
+        <h3>If any Queries?</h3>
+        <h4>Contact Us</h4><br>
+        <i class="fa-solid fa-phone"></i>
+        <p class="hide"><a href=""> 9876543210</a></p>
+        <i class="fa-solid fa-envelope"></i>
+        <p class="hide"> <a href=""> Vidhai @ gmail.com </a></p>
+        <i class="fa-brands fa-twitter"></i>
+        <p class="hide"> <a href=""> @ Vidhai</a></p>
+        <i class="fa-brands fa-instagram"></i>
+        <p class="hide"> <a href=""> Vidhai_official</a></p><br><br><br><br>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function validateform(event) {
+      event.preventDefault();
+
+      var Username = document.getElementById("Username").value;
+      var Password = document.getElementById("Password").value;
+
+      if (Username.length >= 6 && Password.length >= 6) {
+        alert("Login Successfully");
+      }
+      else {
+        alert("Invalid Username or Password Please Try again!");
+      }
+    }
+
+  </script>
+
+
+  <!--Contact-->
+
+
+</body>
+
+</html>
